@@ -1,0 +1,33 @@
+body {
+  background: #258bff;
+    font-family: helvetica, sans-serif;
+    width: 750px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  div {
+    padding-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    width: 150px;
+    background: #ffc125;
+  }
+  h2 {
+    background: #edff25;
+    color: #180b06;
+    padding: 10px;
+    font-size: medium;
+    width:300px;
+  }
+  
+  p {
+    background: #edff25;
+    color: #180b06;
+    padding: 10px;
+    width:300px;
+  }
