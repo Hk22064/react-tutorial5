@@ -15,13 +15,20 @@ const Confirm = () => {
 
   const handleAuthentication = async () => {
     if (inputText === secretText) {
+      
       setConfirmCount(confirmCount + 1);
       setDisplayText('認証成功: 5422064 畠谷佳汰');
+  
+       countapi.hit('Confirmtest001', '22064').then(() => {
+        countapi.get('Confirmtest001', '22064').then((result) => {
+          setTotalVisitors(result.value);
+        });
+      });
     } else {
       setDisplayText('認証失敗');
     }
   };
-
+  
   useEffect(() => {
     countapi.get('Confirmtest001', '22064').then((result) => {
       setTotalVisitors(result.value);
