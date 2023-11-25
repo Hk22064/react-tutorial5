@@ -7,7 +7,7 @@ const Confirm = () => {
   const [displayText, setDisplayText] = useState('');
   const [visitorCount, setVisitorCount] = useState(0); // 訪問者数を保持するステート
   const secretText = '尾上洋介'; 
-  const countApiEndpoint = 'https://api.countapi.xyz';
+
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
@@ -15,18 +15,21 @@ const Confirm = () => {
 
   const fetchVisitorCount = async () => {
     try {
-      const response = await axios.get(`${countApiEndpoint}/get/your-namespace/visit`);
+      await axios.get('https://api.countapi.xyz/hit/homeviewer/5422064');
+      const response = await axios.get('https://api.countapi.xyz/hit/homeviewer/5422064');
       const count = response.data.value;
       setVisitorCount(count);
     } catch (error) {
       console.error('訪問者数の取得エラー:', error);
     }
   };
+  
 
   const handleAuthentication = async () => {
     if (inputText === secretText) {
-      setDisplayText('認証成功:5422064 畠谷佳汰');
       await fetchVisitorCount(); 
+      setDisplayText('認証成功:5422064 畠谷佳汰');
+      
     } else {
       setDisplayText('認証失敗');
     }
