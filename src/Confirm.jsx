@@ -18,7 +18,8 @@ const Confirm = () => {
       
       setConfirmCount(confirmCount + 1);
       setDisplayText('認証成功: 5422064 畠谷佳汰');
-  
+      setTotalVisitors(totalVisitors + 1);
+
        countapi.hit('Confirmtest001', '22064').then(() => {
         countapi.get('Confirmtest001', '22064').then((result) => {
           setTotalVisitors(result.value);
